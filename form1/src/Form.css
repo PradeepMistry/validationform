@@ -1,0 +1,60 @@
+input[type=text], input[type=email] , input[type=number] {
+    width: 50%;
+    padding: 10px 30px;
+    padding-left: 30px;
+    margin: 10px 0px;
+    box-sizing: border-box;
+    border: 1px solid #58B19F;
+    text-align:10px;
+    margin-left: 10px;
+    text-align:left;
+    box-align:center;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+textarea {
+    width: 80%;
+    height: 50px;
+    padding: 15px 22px;
+    box-sizing: border-box;
+    border: 2px solid #58B19F;
+    border-radius: 2px;
+    resize: none;  
+}
+
+input[type=submit] {
+    background-color: #039BE5;
+    border: none;
+    color: white;
+    padding: 8px 25px;
+    text-decoration: none;
+    border: 2px solid #ccc;
+    margin: 5px 10px;
+    cursor: pointer;  
+margin-left: 19.5em;
+
+}
+div{
+
+    color:#ff9900;
+    background-color: black;
+  
+    padding-left: 100px;
+    padding: 4px;
+    page-break-after: auto;
+   
+}
+body{
+    background-color: grey;
+}
+label{
+    margin-left: 2px;
+}
+h1{
+    padding-left: 170px;
+  
+}
