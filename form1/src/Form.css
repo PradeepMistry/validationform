@@ -1,28 +1,25 @@
 input[type=text], input[type=email] , input[type=number] {
-    width: 50%;
-    padding: 10px 30px;
-    padding-left: 30px;
-    margin: 10px 0px;
+    width: 49%;
+    padding: 5px 10px;
     box-sizing: border-box;
-    border: 1px solid #58B19F;
-    text-align:10px;
-    margin-left: 10px;
-    text-align:left;
-    box-align:center;
-    display: flex;
   align-items: center;
   justify-content: center;
-
-
+  border-radius: 10px;
+  display: block;
+  margin-left: 9em;
+border-color: lightblue;
 }
-
+input[type="text"]:hover{
+    border: 1px solid #999;
+    border-radius: 5px;
+    }
 textarea {
-    width: 80%;
-    height: 50px;
+    width: 10%;
+    height: 29px;
     padding: 15px 22px;
     box-sizing: border-box;
-    border: 2px solid #58B19F;
-    border-radius: 2px;
+    border: 2px solid rgb(48, 144, 255);
+    border-radius: 1px;
     resize: none;  
 }
 
@@ -33,28 +30,76 @@ input[type=submit] {
     padding: 8px 25px;
     text-decoration: none;
     border: 2px solid #ccc;
-    margin: 5px 10px;
+    margin: 0px 10px;
     cursor: pointer;  
-margin-left: 19.5em;
-
+    border-radius: 10px;
+margin-bottom: 100px;
 }
+input:hover[type="submit"]  {
+    cursor: pointer;
+    background-color: white;
+    color: rgb(70, 153, 179);
+  }
+  label {
+    margin-bottom: 5px;
+    height: 22px;
+  }
+  
+
 div{
 
-    color:#ff9900;
-    background-color: black;
-  
-    padding-left: 100px;
+    color:black;
+    background-color: white;
+padding-bottom: 100px;
     padding: 4px;
-    page-break-after: auto;
-   
-}
-body{
-    background-color: grey;
+   margin: 20px;
+   margin-left: 100px;
+   margin-right: 100px;
+   margin-top: 20px;
+   margin-bottom: 10px;
+
 }
 label{
     margin-left: 2px;
 }
-h1{
-    padding-left: 170px;
+
+
+.ll{
+    margin: 10px;
+   
+
+}
+
+.outerborder
+{
+min-height: 100vh;
+margin: 0;
+color:red;
+}
+h2 {
+    text-align: center;
+  }
   
+h4{
+    font-size: 15px;
+    color: dimgray;
+}
+select{
+    width: 49%;
+    padding: 5px 10px;
+    box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  display: block;
+  margin-left: 9em;
+border-color: lightblue;
+
+
+}
+input.error {
+    border-color: red;
+  }
+.placeicon{
+    font-family: fontawesome;
 }
