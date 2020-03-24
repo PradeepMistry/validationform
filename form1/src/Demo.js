@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './Form.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+
 import { MdCancel } from "react-icons/md";
 const initialState={
         email: "",
         password: "",
         emailError: "",
-        passwordError: ""
+        passwordError: "",
+        name:"",
+        nameError:""
 }
 class Demo extends Component {
         constructor(props) {
                 super(props);
                 this.state = initialState;
+        }
+        handlename = (event) => {
+                console.log(event.target.value);
+                this.setState({ name: event.target.value })
+
+
         }
         handleemail = (event) => {
                 console.log(event.target.value);
@@ -28,20 +35,23 @@ class Demo extends Component {
         handlesubmit = (event) => {
                 event.preventDefault();
                 if (this.valid()) {
-                        alert('Email : Password is submitted');
+                        alert('Name: Email : Role :Password is submitted');
                         this.setState(initialState);
                 }
         }
 
         valid() {
-                if (!this.state.email.includes("@") && this.state.password.length < 8) {
-                        this.setState({ emailError: "Invalid email", passwordError: "Password is too short-Atleast 8 Character must be there" })    
+                if (!this.state.email.includes("@") && this.state.name.length<3 && this.state.password.length < 8)
+                 {
+                        this.setState({ emailError: "Invalid email" ,nameError: "Name Atleast Contains 3 Characters",
+                        passwordError: "Password is too short-Atleast 8 Characters must be there"})    
 
                 }
-                else if (!this.state.email.includes("")) {
-                        this.setState({ emailError: "Email Required" })
-
-                }
+                else if (this.state.name.length<3)
+                 {
+                        this.setState({ nameError: "Name Atleast Contains 3 Characters" })
+                 }
+                
                 else if (!this.state.email.includes("@")) {
                         this.setState({ emailError: "Invalid Email" })
                 }
@@ -63,33 +73,57 @@ class Demo extends Component {
         render() {
 
                 return (
+                        <div class="shadow p-3 mb-5 bg-white rounded">
                         <form onSubmit={this.handlesubmit}>
                                 <body>
+                                        <form className="text-center">
                                         <div>
                                                 
-                                                <h1>VALIDATED LOGIN FORM</h1>
+                                                <h2>VALIDATED LOGIN FORM</h2>
+                                                <h4>Create Your Account. It takes few minutes.
+                                        
+                                                </h4>
                                                 
 
-                                                        <div><label>Email:</label>{
+                                                <div >{ this.state.nameError && <MdCancel color='red'/>
+                                                                } <view><input type="text" class ="placeicon" placeholder=" &#xf007; Name" value={this.state.name}
+                                                                onChange={this.handlename} />
+                                                          <p style ={{fontSize:11.5,color:'red'}}>{this.state.nameError}</p> </view>    
+                                                                </div>
+                                                        <div>
+                                                        <select className="d-block p-2 bg-dark text-white">
+                                                          <option value="grapefruit">Computer Science</option>
+                                                        <option value="lime">I.T</option>
+                                                         <option selected value="coconut">Mechanics</option>
+                                                         <option value="mango">Civil</option>
+                                                         </select>         
+                                                         </div>       
+                                                               
+                                                        <div>{
                                                                         this.state.emailError && <MdCancel color='red'/>
-                                                                }  <input type="text" placeholder="Enter valid Email*" value={this.state.email}
+                                                                }  <input type="text" class ="placeicon" placeholder="&#xf003; Email" value={this.state.email}
                                                                 onChange={this.handleemail} />
                                                                
-                                                                </div>
-                                                        <p style ={{fontSize:20,color:'red'}}>{this.state.emailError}</p><br />
-                                                       <div> <label>Password:</label> {
+                                                         
+                                                        <p style ={{fontSize:11.5,color:'red'}}>{this.state.emailError}</p>
+                                                        </div>
+                                                       <div> {
                                                                     this.state.passwordError && <MdCancel color='red'/>    
-                                                                }<input type="text" placeholder="Enter password*" value={this.state.password}
+                                                                }<input type="text" class ="placeicon" placeholder="&#xf023; Password" value={this.state.password}
                                                                 onChange={this.handlepassword} />
+
                                                                 
                                                                 
-                                                                <p style={{fontSize:20,color:'red'}}>{this.state.passwordError}</p><br /></div>
-                                                        <input type="submit" value="Submit" />
+                                                                <p style={{fontSize:11.5,color:'red'}}>{this.state.passwordError}</p></div>
+                                                          <div className="submit">     
+                                                        <input type="submit" value="Submit" /></div> 
 
                                                 
-                                        </div>
+                                              </div>
+                                        </form>
                                 </body>
                         </form>
+                </div>
                 )
 
         }
